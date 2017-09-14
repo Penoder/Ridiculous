@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>Ridiculous</display-name>
+	<servlet>
+		<description>JAX-RS Tools Generated - Do not modify</description>
+		<servlet-name>JAX-RS Servlet</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>GetGifFun</servlet-name>
+		<servlet-class>com.penoder.servlet.GetGifFun</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetImgFun</servlet-name>
+		<servlet-class>com.penoder.servlet.GetImgFun</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetTxtFun</servlet-name>
+		<servlet-class>com.penoder.servlet.GetTxtFun</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetVideoList</servlet-name>
+		<servlet-class>com.penoder.servlet.GetVideoList</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetMusicList</servlet-name>
+		<servlet-class>com.penoder.servlet.GetMusicList</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetAVideos</servlet-name>
+		<servlet-class>com.penoder.servlet.GetAVideos</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LikeOrUnLikeFun</servlet-name>
+		<servlet-class>com.penoder.servlet.LikeOrUnLikeFun</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetVideos</servlet-name>
+		<servlet-class>com.penoder.servlet.GetVideos</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UploadVideo</servlet-name>
+		<servlet-class>com.penoder.servlet.UploadVideo</servlet-class>
+	</servlet>
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>JAX-RS Servlet</servlet-name>
+		<url-pattern>/jaxrs/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetGifFun</servlet-name>
+		<url-pattern>/GetFun/GetGifFun</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetImgFun</servlet-name>
+		<url-pattern>/GetFun/GetImgFun</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetTxtFun</servlet-name>
+		<url-pattern>/GetFun/GetTxtFun</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetVideoList</servlet-name>
+		<url-pattern>/GetMedia/GetVideoList</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetMusicList</servlet-name>
+		<url-pattern>/GetMedia/GetMusicList</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetAVideos</servlet-name>
+		<url-pattern>/GetMedia/GetAVideos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LikeOrUnLikeFun</servlet-name>
+		<url-pattern>/GetFun/LikeOrUnLikeFun</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetVideos</servlet-name>
+		<url-pattern>/GetMedia/GetVideos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadVideo</servlet-name>
+		<url-pattern>/GetMedia/UploadVideo</url-pattern>
+	</servlet-mapping>
+
+	<!-- <listener> <listener-class>com.penoder.operate.TaskManager</listener-class> 
+		</listener> -->
+</web-app>
