@@ -39,7 +39,7 @@ public class LikeOrUnLikeFun extends HttpServlet {
 		boolean funStatus = Boolean.parseBoolean(request.getParameter("funStatus"));
 
 		LikeService likeService = new LikeServiceImpl();
-		String resultStr = "{\"status\":0,\"message\":\"查询成功\",\"datas\":null}";
+		String resultStr = "{\"status\":1,\"message\":\"请求失败\",\"datas\":null}";
 
 		switch (funType) {
 		case 1: // GIF

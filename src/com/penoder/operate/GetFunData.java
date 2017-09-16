@@ -43,12 +43,12 @@ public class GetFunData {
 			month = Integer.parseInt(currentDate.substring(5, 7));
 			day = Integer.parseInt(currentDate.substring(8, 10));
 			beforeDay = printCalendar(getBeforeDay(setCalendar(year, month, day)));
-			beforeDay = "2017-09-01";	// 手动插入某天之后的数据
+			beforeDay = "2017-09-11";	// 手动插入某天之后的数据
 			currentTime = currentDateTime.substring(11, 19);
 			System.out.println("现在的时间是： -------------- " + beforeDay + " " + currentTime);
 			currentTime = currentDateTime.substring(11, 13);
 			// 设置成每天的凌晨、六点、十二点、十八点四个时间点用于更新数据
-			if (currentTime.contains("21") || currentTime.contains("00") || currentTime.contains("06") || currentTime.contains("12") || currentTime.contains("18")) {
+			if (currentTime.contains("22") || currentTime.contains("00") || currentTime.contains("06") || currentTime.contains("12") || currentTime.contains("18")) {
 				gfd.insertGifData(gfd);
 				gfd.insertImgData(gfd);
 				gfd.insertTxtData(gfd);

@@ -16,7 +16,7 @@ import com.penoder.utils.ConnectDatabase;
  * @author Penoder
  *
  */
-public class LikeOrUnLikeCheckOperate {
+public class LikeOrCollectCheckOperate {
 	
 	/**
 	 * 判断用户是不是存在
@@ -57,19 +57,66 @@ public class LikeOrUnLikeCheckOperate {
 	 * @param funID
 	 * @return
 	 */
-	public static boolean isExitFunID(String funID, int funType) {
+	public static boolean isExitFunIDFromThumb(String funID, int funType) {
 		boolean isExitFunID = false;
 		
 		String SELECT_SQL = "";
 		switch (funType) {
 		case 1: // GIF
-			SELECT_SQL = "SELECT * FROM gifthumb WHERE gifID = ?";
+			SELECT_SQL = "SELECT * FROM gifThumb WHERE gifID = ?";
 			break;
 		case 2: // IMG
-			SELECT_SQL = "SELECT * FROM imgthumb WHERE imgID = ?";
+			SELECT_SQL = "SELECT * FROM imgThumb WHERE imgID = ?";
 			break;
 		case 3: // Txt
-			SELECT_SQL = "SELECT * FROM txtthumb WHERE txtID = ?";
+			SELECT_SQL = "SELECT * FROM txtThumb WHERE txtID = ?";
+			break;
+		default:
+			break;	
+		}
+
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			conn = ConnectDatabase.getConnection();
+			ps = conn.prepareStatement(SELECT_SQL);
+			ps.setString(1, funID);
+
+			rs = ps.executeQuery();
+			
+			if (rs.next()) {
+				isExitFunID = true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			ConnectDatabase.close(conn, ps, rs);
+		}
+		
+		return isExitFunID;
+	}
+	
+	/**
+	 * 对应的收藏表中是不是有相应的FUN数据
+	 * 
+	 * @param funID
+	 * @param funType
+	 * @return
+	 */
+	public static boolean isExitFunIDFromCollect(String funID, int funType) {
+		boolean isExitFunID = false;
+		
+		String SELECT_SQL = "";
+		switch (funType) {
+		case 1: // GIF
+			SELECT_SQL = "SELECT * FROM gifCollect WHERE gifID = ?";
+			break;
+		case 2: // IMG
+			SELECT_SQL = "SELECT * FROM imgCollect WHERE imgID = ?";
+			break;
+		case 3: // Txt
+			SELECT_SQL = "SELECT * FROM txtCollect WHERE txtID = ?";
 			break;
 		default:
 			break;	

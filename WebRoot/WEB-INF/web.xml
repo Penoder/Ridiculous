@@ -39,6 +39,10 @@
 		<servlet-class>com.penoder.servlet.LikeOrUnLikeFun</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>CollectOrCancelFun</servlet-name>
+		<servlet-class>com.penoder.servlet.CollectOrCancelFun</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>GetVideos</servlet-name>
 		<servlet-class>com.penoder.servlet.GetVideos</servlet-class>
 	</servlet>
@@ -46,7 +50,6 @@
 		<servlet-name>UploadVideo</servlet-name>
 		<servlet-class>com.penoder.servlet.UploadVideo</servlet-class>
 	</servlet>
-
 
 
 
@@ -84,6 +87,10 @@
 		<url-pattern>/GetFun/LikeOrUnLikeFun</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
+		<servlet-name>CollectOrCancelFun</servlet-name>
+		<url-pattern>/GetFun/CollectOrCancelFun</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>GetVideos</servlet-name>
 		<url-pattern>/GetMedia/GetVideos</url-pattern>
 	</servlet-mapping>
@@ -91,7 +98,4 @@
 		<servlet-name>UploadVideo</servlet-name>
 		<url-pattern>/GetMedia/UploadVideo</url-pattern>
 	</servlet-mapping>
-
-	<!-- <listener> <listener-class>com.penoder.operate.TaskManager</listener-class> 
-		</listener> -->
 </web-app>

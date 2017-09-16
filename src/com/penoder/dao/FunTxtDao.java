@@ -22,4 +22,15 @@ public interface FunTxtDao {
 	 * @return
 	 */
 	public String likeOrUnLikeTxt(String userID, String txtID, boolean likeStatus);
+	
+	/**
+	 * 用户 userID 对某条 TXT 数据 txtID 执行收藏（isCollect = true）或取消收藏（isCollect = false）操作
+	 * txtThumb表中还有一个 thumbTime字段，时间由实现类插入到数据库是获取当前的时间，而不是作为参数传递
+	 * 
+	 * @param userID
+	 * @param txtID
+	 * @param isCollect
+	 * @return
+	 */
+	public String collectOrCancelTxt(String userID, String txtID, boolean isCollect);
 }

@@ -21,4 +21,15 @@ public interface FunImgDao {
 	 * @return
 	 */
 	public String likeOrUnLikeImg(String userID, String imgID, boolean likeStatus);
+	
+	/**
+	 * 用户 userID 对某条 IMG数据 imgID 执行收藏（isCollect = true）或取消收藏（isCollect = false）操作
+	 * imgThumb表中还有一个 thumbTime字段，时间由实现类插入到数据库是获取当前的时间，而不是作为参数传递
+	 * 
+	 * @param userID
+	 * @param imgID
+	 * @param isCollect
+	 * @return
+	 */
+	public String collectOrCancelImg(String userID, String imgID, boolean isCollect);
 }
