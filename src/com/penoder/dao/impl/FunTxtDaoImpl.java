@@ -214,7 +214,7 @@ public class FunTxtDaoImpl implements FunTxtDao {
 		
 		String currentTime = TimeUtil.unixToString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss");
 
-		String sql = "UPDATE txtThumb SET thumbType = ? AND thumbTime = ? WHERE txtID = ? AND userID = ?";
+		String sql = "UPDATE txtThumb SET thumbType = ?, thumbTime = ? WHERE txtID = ? AND userID = ?";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -341,7 +341,7 @@ public class FunTxtDaoImpl implements FunTxtDao {
 		
 		String currentTime = TimeUtil.unixToString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss");
 
-		String sql = "UPDATE txtCollect SET collectType = ? AND collectTime = ? WHERE txtID = ? AND userID = ?";
+		String sql = "UPDATE txtCollect SET collectType = ?, collectTime = ? WHERE txtID = ? AND userID = ?";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;

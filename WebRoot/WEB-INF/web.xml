@@ -50,6 +50,10 @@
 		<servlet-name>UploadVideo</servlet-name>
 		<servlet-class>com.penoder.servlet.UploadVideo</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>RegisterUser</servlet-name>
+		<servlet-class>com.penoder.servlet.RegisterUser</servlet-class>
+	</servlet>
 
 
 
@@ -97,5 +101,9 @@
 	<servlet-mapping>
 		<servlet-name>UploadVideo</servlet-name>
 		<url-pattern>/GetMedia/UploadVideo</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RegisterUser</servlet-name>
+		<url-pattern>/GetUser/RegisterUser</url-pattern>
 	</servlet-mapping>
 </web-app>

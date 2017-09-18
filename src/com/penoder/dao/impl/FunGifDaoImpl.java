@@ -67,8 +67,7 @@ public class FunGifDaoImpl implements FunGifDao {
 						"SELECT COUNT(gifID) FROM `comment` WHERE gifID = ?",
 						gifID);
 				boolean isThumb = getIsThumbOrCollect(
-						"SELECT thumbType FROM gifThumb WHERE gifID = '"
-								+ gifID + "' AND userID = '" + userID + "'", 1);
+						"SELECT thumbType FROM gifThumb WHERE gifID = '" + gifID + "' AND userID = '" + userID + "'", 1);
 				boolean isCollect = getIsThumbOrCollect(
 						"SELECT collectType FROM gifcollect WHERE gifID = '"
 								+ gifID + "' AND userID = '" + userID + "'", 2);
@@ -225,7 +224,7 @@ public class FunGifDaoImpl implements FunGifDao {
 		
 		String currentTime = TimeUtil.unixToString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss");
 
-		String sql = "UPDATE gifThumb SET thumbType = ? AND thumbTime = ? WHERE gifID = ? AND userID = ?";
+		String sql = "UPDATE gifThumb SET thumbType = ?, thumbTime = ? WHERE gifID = ? AND userID = ?";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -353,7 +352,7 @@ public class FunGifDaoImpl implements FunGifDao {
 		
 		String currentTime = TimeUtil.unixToString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss");
 
-		String sql = "UPDATE gifCollect SET collectType = ? AND collectTime = ? WHERE gifID = ? AND userID = ?";
+		String sql = "UPDATE gifCollect SET collectType = ?, collectTime = ? WHERE gifID = ? AND userID = ?";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;

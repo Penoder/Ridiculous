@@ -24,14 +24,14 @@ public class TimeUtil {
         long mistiming = currentUnix - unix;    // 计算时间差
         if (mistiming < 0) {    // 未来的某个时间（数据出错的情况才会走这吧）
             format = "yyyy-MM-dd HH:mm:ss";
-        } else if (mistiming < 60 * 1000) {     // 1 分钟之内
-            result = "刚刚";
-        } else if (mistiming < 60 * 60 * 1000) {    // 1 小时之内
-            result = (mistiming / 60000) + "分钟前";
-        } else if (mistiming < 24 * 60 * 60 * 1000) { // 1 天之内
-            result = (mistiming / 3600000) + "小时前";
-        } else if (transToString(unix, "yyyy").equals(transToString(currentUnix, "yyyy"))) { // 同一年
-            result = transToString(unix, format);
+//        } else if (mistiming < 60 * 1000) {     // 1 分钟之内
+//            result = "刚刚";
+//        } else if (mistiming < 60 * 60 * 1000) {    // 1 小时之内
+//            result = (mistiming / 60000) + "分钟前";
+//        } else if (mistiming < 24 * 60 * 60 * 1000) { // 1 天之内
+//            result = (mistiming / 3600000) + "小时前";
+//        } else if (transToString(unix, "yyyy").equals(transToString(currentUnix, "yyyy"))) { // 同一年
+//            result = transToString(unix, format);
         } else {    // 不同年份
             if (!format.contains("y")) {    // 不同年份，如果时间格式不包含年，自动返回之前某年
                 format = "yyyy-" + format;

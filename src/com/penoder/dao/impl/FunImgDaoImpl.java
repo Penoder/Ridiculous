@@ -216,7 +216,7 @@ public class FunImgDaoImpl implements FunImgDao {
 		
 		String currentTime = TimeUtil.unixToString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss");
 
-		String sql = "UPDATE imgThumb SET thumbType = ? AND thumbTime = ? WHERE imgID = ? AND userID = ?";
+		String sql = "UPDATE imgThumb SET thumbType = ?, thumbTime = ? WHERE imgID = ? AND userID = ?";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -344,7 +344,7 @@ public class FunImgDaoImpl implements FunImgDao {
 		
 		String currentTime = TimeUtil.unixToString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss");
 
-		String sql = "UPDATE imgCollect SET collectType = ? AND collectTime = ? WHERE imgID = ? AND userID = ?";
+		String sql = "UPDATE imgCollect SET collectType = ?, collectTime = ? WHERE imgID = ? AND userID = ?";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
